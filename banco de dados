@@ -1,0 +1,31 @@
+/*CREATE DATABASE portal_noticias;
+USE portal_noticias;
+
+CREATE TABLE usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(100),
+  email VARCHAR(150) UNIQUE,
+  senha VARCHAR(255),
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE noticias (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(255),
+  resumo TEXT,
+  conteudo TEXT,
+  imagem VARCHAR(255),
+  autor_id INT,
+  avaliacao INT,
+  fake BOOLEAN DEFAULT 0,
+  explicacao_fake TEXT,
+  data_publicacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (autor_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
+CREATE TABLE acessos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  noticia_id INT,
+  data_acesso DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (noticia_id) REFERENCES noticias(id) ON DELETE CASCADE
+);*\
