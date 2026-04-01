@@ -1,7 +1,7 @@
 <?php 
 
 require_once '../backend/conexao.php';
-
+require_once '../includes/navbar.php';
 $conexao = new Database();
 
 $conn = $conexao->getConnection();
