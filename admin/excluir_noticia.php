@@ -1,7 +1,10 @@
-<?php 
-session_start();
 
-require_once 'verifica_login.php';
+<?php session_start(); ?>
+
+<?php 
+
+
+require_once '../backend/verifica_login.php';
 
 $conn = new PDO('mysql:host=localhost;dbname=portal_noticias', 'root', '');
 
@@ -60,7 +63,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Excluir Notícia</h2>
 
     <p>Tem certeza que deseja excluir:</p>
-    <strong><?= htmlspecialchars($noticia['titulo']) ?></strong>
+    <strong><?= htmlspecialchars($noticia['titulo']) ?></strong> <br>
+    <strong><?= htmlspecialchars($noticia['resumo']) ?></strong> <br>
+    <strong><?= htmlspecialchars($noticia['conteudo']) ?></strong> <br>
 
     <form method="POST" style="margin-top:20px;">
         <button type="submit">Sim, excluir</button>

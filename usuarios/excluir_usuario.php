@@ -1,3 +1,7 @@
+
+<?php session_start(); ?>
+
+
 <?php
 require_once '../backend/verifica_login.php';
 require_once '../backend/conexao.php';
